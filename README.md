@@ -1,0 +1,1 @@
+# test-arquillian-extension
