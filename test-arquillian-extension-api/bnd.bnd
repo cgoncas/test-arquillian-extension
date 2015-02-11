@@ -1,0 +1,5 @@
+Bundle-Name: Liferay Test Arquillian Extension API
+Bundle-SymbolicName: com.liferay.testarquillianextension.api
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.testarquillianextension.*
+Include-Resource: classes

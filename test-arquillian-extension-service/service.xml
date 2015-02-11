@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
+
+<service-builder package-path="com.liferay.testarquillianextension" auto-import-default-references="false">
+	<namespace>TestArquillianExtension</namespace>
+	<entity name="Entity" uuid="true" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="entityId" type="long" primary="true" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="total" type="long" />
+		<column name="name" type="String" />
+		<column name="description" type="String" localized="true" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Name" return-type="Collection">
+			<finder-column name="name" />
+		</finder>
+
+		<!-- References -->
+
+		<reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+
+	<exceptions>
+		<exception>DuplicateVote</exception>
+		<exception>QuestionChoice</exception>
+		<exception>QuestionDescription</exception>
+		<exception>QuestionExpirationDate</exception>
+		<exception>QuestionExpired</exception>
+		<exception>QuestionTitle</exception>
+	</exceptions>
+</service-builder>

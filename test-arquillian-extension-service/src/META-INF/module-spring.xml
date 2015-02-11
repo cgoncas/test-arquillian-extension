@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:osgi="http://www.springframework.org/schema/osgi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+	<bean id="com.liferay.testarquillianextension.service.EntityLocalService" class="com.liferay.testarquillianextension.service.impl.EntityLocalServiceImpl" />
+	<osgi:service interface="com.liferay.testarquillianextension.service.EntityLocalService" ref="com.liferay.testarquillianextension.service.EntityLocalService">
+		<osgi:service-properties>
+			<entry key="json.web.service.context.name" value="testarquillianextension" />
+			<entry key="json.web.service.context.path" value="Entity" />
+		</osgi:service-properties>
+	</osgi:service>
+	<bean id="com.liferay.testarquillianextension.service.EntityService" class="com.liferay.testarquillianextension.service.impl.EntityServiceImpl" />
+	<osgi:service interface="com.liferay.testarquillianextension.service.EntityService" ref="com.liferay.testarquillianextension.service.EntityService">
+		<osgi:service-properties>
+			<entry key="json.web.service.context.name" value="testarquillianextension" />
+			<entry key="json.web.service.context.path" value="Entity" />
+		</osgi:service-properties>
+	</osgi:service>
+	<bean id="com.liferay.testarquillianextension.service.persistence.EntityPersistence" class="com.liferay.testarquillianextension.service.persistence.impl.EntityPersistenceImpl" parent="basePersistence" />
+	<osgi:service interface="com.liferay.testarquillianextension.service.persistence.EntityPersistence" ref="com.liferay.testarquillianextension.service.persistence.EntityPersistence" />
+</beans>
